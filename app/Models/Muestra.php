@@ -19,7 +19,7 @@ class Muestra extends Model
         'id_calidad', 
         'id_tipo_naturaleza', 
         'id_formato',
-        'id_sede'
+       //'id_sede'
         //'id_user'
     ];
 
