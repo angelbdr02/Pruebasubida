@@ -129,7 +129,7 @@ export default function TablaMuestras() {
                                                 </button>
                                             </td>
                                             <td className="p-4 border-b border-blue-gray-50">
-                                                <button id={muestra.id} onClick={()=> {deleteMuestra(muestra.id,getMuestras)}} className="bg-blue-600 text-white w-36 h-12 rounded-lg ">
+                                                <button id={muestra.id} className="bg-blue-600 text-white w-36 h-12 rounded-lg ">
                                                     Descargar
                                                 </button>
                                             </td>
