@@ -9,7 +9,7 @@ export default function TablaMuestras() {
     }, []) 
 
     const getMuestras = () => {
-        fetch(`/api/api/muestras`)
+        fetch(`/api/muestras`)
             .then(response => response.json())
             .then(data => setMuestras(data))
             .catch(error => console.error('Error al obtener los datos:', error))
