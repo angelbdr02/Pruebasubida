@@ -33,7 +33,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
-        "APP_URL": "https://anatomiapatologica.vercel.app",
+        "APP_URL": "https://pruebasubida.vercel.app/",
         "APP_KEY": "base64:nyKVslgk5GMS7YCEVM235WQlNUkgaCRSKQO40k7NNoQ=",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
