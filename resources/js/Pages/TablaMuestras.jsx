@@ -9,7 +9,7 @@ export default function TablaMuestras() {
     }, []) 
 
     const getMuestras = () => {
-        fetch(`/api/muestras`)
+        fetch(`/api/api/muestras`)
             .then(response => response.json())
             .then(data => setMuestras(data))
             .catch(error => console.error('Error al obtener los datos:', error))
@@ -71,6 +71,11 @@ export default function TablaMuestras() {
                                             Eliminar
                                         </p>
                                     </th>
+                                    <th className="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+                                        <p className="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+                                            Descargar
+                                        </p>
+                                    </th>
                                 </tr>
                             </thead>
  
@@ -121,6 +126,11 @@ export default function TablaMuestras() {
                                             <td className="p-4 border-b border-blue-gray-50">
                                                 <button id={muestra.id} onClick={()=> {deleteMuestra(muestra.id,getMuestras)}} className="bg-blue-600 text-white w-36 h-12 rounded-lg ">
                                                     Borrar muestra
+                                                </button>
+                                            </td>
+                                            <td className="p-4 border-b border-blue-gray-50">
+                                                <button id={muestra.id} onClick={()=> {deleteMuestra(muestra.id,getMuestras)}} className="bg-blue-600 text-white w-36 h-12 rounded-lg ">
+                                                    Descargar
                                                 </button>
                                             </td>
                                         </tr>
