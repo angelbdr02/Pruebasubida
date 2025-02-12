@@ -93,9 +93,9 @@ class MuestraController extends Controller
     }
 
     public function generarPDF($id)
-{
+    {
     // Cargar la muestra con todas sus relaciones
-    $muestra = Muestra::with(['calidad', 'Tipo_naturaleza', 'formato'])
+    $muestra = Muestra::with(['Calidad', 'Tipo_naturaleza', 'Formato'])
                 ->findOrFail($id);
 
     // Generar PDF con los datos de la muestra

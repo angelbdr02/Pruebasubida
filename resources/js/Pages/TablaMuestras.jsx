@@ -8,6 +8,11 @@ export default function TablaMuestras() {
         getMuestras()
     }, []) 
 
+    const descargarPDF = (id) => {
+        window.location.href = `/descargar-pdf/${id}`;
+      };
+      
+
     const getMuestras = () => {
         fetch(`/api/api/muestras`)
             .then(response => response.json())
