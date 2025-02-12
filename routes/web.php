@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MuestraController;
 use App\Http\Controllers\ProfileController;
 
 //Demas rutas
@@ -23,3 +24,5 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php'; */
+
+Route::get('/descargar-pdf/{id}', [MuestraController::class, 'generarPDF']);

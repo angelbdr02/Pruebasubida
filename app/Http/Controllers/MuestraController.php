@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Muestra;
-use Exception;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class MuestraController extends Controller
 {
@@ -88,4 +91,17 @@ class MuestraController extends Controller
 
         return response()->json(['message' => 'Muestra eliminada correctamente', 'muestra' => $muestra], 201);
     }
+
+    public function generarPDF($id)
+{
+    // Cargar la muestra con todas sus relaciones
+    $muestra = Muestra::with(['calidad', 'Tipo_naturaleza', 'formato'])
+                ->findOrFail($id);
+
+    // Generar PDF con los datos de la muestra
+    $pdf = FacadePdf::loadView('pdf.muestra', compact('muestra'));
+
+    // Descargar el PDF
+    return $pdf->download('muestra_' . $muestra->codigo . '.pdf');
+}
 }
