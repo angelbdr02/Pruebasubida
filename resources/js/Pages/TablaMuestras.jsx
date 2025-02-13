@@ -12,6 +12,7 @@ export default function TablaMuestras() {
         window.location.href = `/descargar-pdf/${id}`;
       };
       
+      
 
     const getMuestras = () => {
         fetch(`/api/api/muestras`)
@@ -134,9 +135,7 @@ export default function TablaMuestras() {
                                                 </button>
                                             </td>
                                             <td className="p-4 border-b border-blue-gray-50">
-                                                <button id={muestra.id} onClick={() => descargarPDF(muestra.id)} className="bg-blue-600 text-white w-36 h-12 rounded-lg ">
-                                                    Descargar
-                                                </button>
+                                                <a href="{{route('descargar')}}" className="btn bg-blue-600 text-white w-36 h-12 rounded-lg">Descargar</a>
                                             </td>
                                         </tr>
                                     ))
