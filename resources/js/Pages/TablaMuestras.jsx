@@ -135,7 +135,7 @@ export default function TablaMuestras() {
                                                 </button>
                                             </td>
                                             <td className="p-4 border-b border-blue-gray-50">
-                                                <a href="{{route('descargar')}}" className="btn bg-blue-600 text-white w-36 h-12 rounded-lg">Descargar</a>
+                                                <a href="{{route('descargar')}}" className="btn bg-blue-600 text-white w-36 h-12 rounded-lg" id="{muestra.id}">Descargar</a>
                                             </td>
                                         </tr>
                                     ))

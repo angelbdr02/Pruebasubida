@@ -20,15 +20,15 @@
     <table>
         <tr>
             <th>Calidad</th>
-            <td>{{ $muestra->Calidad->nombre ?? 'N/A' }}</td>
+            <td>{{ $muestra->calidad->nombre ?? 'N/A' }}</td>
         </tr>
         <tr>
             <th>Tipo de Naturaleza</th>
-            <td>{{ $muestra->Tipo_naturaleza->nombre ?? 'N/A' }}</td>
+            <td>{{ $muestra->tipoNaturaleza->nombre ?? 'N/A' }}</td>
         </tr>
         <tr>
             <th>Formato</th>
-            <td>{{ $muestra->Formato->nombre ?? 'N/A' }}</td>
+            <td>{{ $muestra->formato->nombre ?? 'N/A' }}</td>
         </tr>
     </table>
 </body>
