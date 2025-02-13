@@ -7,11 +7,6 @@ export default function TablaMuestras() {
     useEffect(()=>{
         getMuestras()
     }, []) 
-
-    const descargarPDF = (id) => {
-        window.location.href = `/descargar-pdf/${id}`;
-      };
-      
       
 
     const getMuestras = () => {
