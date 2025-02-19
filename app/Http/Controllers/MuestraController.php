@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Muestra;
-use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -93,10 +93,11 @@ class MuestraController extends Controller
 
     public function descargarPDF($id)
     {
-    $muestra = Muestra::with(['calidad', 'tipoNaturaleza', 'formato'])->find($id);
-
-    $pdf = FacadePdf::loadView('pdf.muestra', compact('muestra'));
-
-    return $pdf->stream('muestra_' . $muestra->codigo . '.pdf');
-}
+        $muestras = Muestra::with(['calidad', 'tipoNaturaleza', 'formato','usuario','interpretaciones.interpretacion'])->findOrFail($id);
+    
+        $pdf = PDF::loadView('pdf.muestra', ['muestras'=>$muestras]);
+    
+        return $pdf->stream('muestra_' . $muestras->codigo . '.pdf');
+    }
+    
 }

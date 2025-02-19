@@ -25,4 +25,3 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php'; */
 
-Route::get('/descargarMuestra', [MuestraController::class, 'descargarPDF'])->name('descargar');

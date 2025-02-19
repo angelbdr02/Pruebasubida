@@ -22,7 +22,10 @@ class DatabaseSeeder extends Seeder
             Tipo_naturalezaSeeder::class,
             Tipo_estudioSeeder::class,
             CalidadSeeder::class,
-            InterpretacionSeeder::class
+            InterpretacionSeeder::class,
+            UserSeeder::class,
+            MuestraSeeder::class,
+            Interpretacion_muestraSeeder::class
         ]);
         
 

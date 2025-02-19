@@ -32,3 +32,5 @@ Route::get('/calidad', [CalidadController::class, 'index']);
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
+
+Route::get('/descargarMuestra/{id}', [MuestraController::class, 'descargarPDF']);

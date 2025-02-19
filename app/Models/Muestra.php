@@ -20,7 +20,7 @@ class Muestra extends Model
         'id_tipo_naturaleza', 
         'id_formato',
        //'id_sede'
-        //'id_user'
+        'id_user'
     ];
 
     public function calidad()
@@ -33,10 +33,10 @@ class Muestra extends Model
         return $this->belongsTo(Formato::class, 'id_formato');
     }
 
-   # public function usuario()
-    #{
-     #   return $this->belongsTo(User::class, 'id_usuario');
-    #}
+    public function usuario()
+    {
+        return $this->belongsTo(User::class, 'id_usuario');
+    }
 
     public function tipoNaturaleza()
     {

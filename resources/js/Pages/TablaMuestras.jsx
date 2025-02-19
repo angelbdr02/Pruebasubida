@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { handleUpdateMuestra, deleteMuestra } from "@/utils/muestrasApiRest"
+import { Link } from "react-router-dom"
 
 export default function TablaMuestras() {
     const [muestras,setMuestras] = useState([])
@@ -10,7 +11,7 @@ export default function TablaMuestras() {
       
 
     const getMuestras = () => {
-        fetch(`/api/api/muestras`)
+        fetch(`/api/muestras`)
             .then(response => response.json())
             .then(data => setMuestras(data))
             .catch(error => console.error('Error al obtener los datos:', error))
@@ -130,7 +131,9 @@ export default function TablaMuestras() {
                                                 </button>
                                             </td>
                                             <td className="p-4 border-b border-blue-gray-50">
-                                                <a href="{{route('descargar')}}" className="btn bg-blue-600 text-white w-36 h-12 rounded-lg" id="{muestra.id}">Descargar</a>
+                                            <a id={muestra.id} href={`/api/descargarMuestra/${muestra.id}`} target="_blank" className="bg-blue-600 text-white w-36 h-12 rounded-lg">
+                                                    Descargar
+                                            </a>
                                             </td>
                                         </tr>
                                     ))
